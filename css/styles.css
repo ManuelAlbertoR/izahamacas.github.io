@@ -1,0 +1,231 @@
+:root {
+    --color-primary: #6c4f3d;
+    --color-secondary: #f7c59f;
+    --color-light: #f7f2ed;
+    --color-dark: #3d2c1e;
+    --color-text: #5a4a3a;
+  }
+  
+  /* FUENTES (único cambio global) */
+  html {
+    overscroll-behavior-y: contain;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--color-light);
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+  
+  h1, h2, h3, h4, .section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+  }
+  
+  /* SLIDE CONTENT (modificación solicitada) */
+  .slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--color-dark);
+    padding: 2.5rem;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 90%;
+    
+    /* Efecto vidrio */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background-color: rgba(244, 188, 151, 0.6);
+    
+    /* Borde sutil */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    
+    /* Sombra */
+    box-shadow: 0 8px 32px rgba(60, 45, 30, 0.15);
+  }
+  
+  .slide-content .btn {
+    font-size: 1rem;
+    padding: 12px 28px;
+    background-color: rgba(108, 79, 61, 0.85);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+  }
+  
+  .slide-content .btn:hover {
+    background-color: rgba(138, 99, 74, 0.95);
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+  
+  /* TODO LO DEMÁS PERMANECE IGUAL (copiado de tu CSS original) */
+  .navbar {
+    background-color: var(--color-primary) !important;
+    transition: all 0.3s;
+  }
+  
+  .navbar.scrolled {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  .header-slider {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  
+  .slide.active {
+    opacity: 1;
+  }
+  
+  .slide-logo {
+    max-width: 200px;
+    margin-bottom: 1rem;
+  }
+  
+  .slide-indicators {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .indicator.active {
+    background: white;
+    transform: scale(1.2);
+  }
+  
+  .section-title {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--color-primary);
+  }
+  
+  .feature-box {
+    transition: all 0.3s;
+    border-radius: 8px;
+  }
+  
+  .feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  
+  .feature-icon {
+    color: var(--color-primary);
+  }
+  
+  .contact-form {
+    border-radius: 10px;
+  }
+  
+  footer {
+    background-color: var(--color-dark) !important;
+  }
+  
+  .social-links a {
+    transition: all 0.3s;
+  }
+  
+  .social-links a:hover {
+    color: var(--color-secondary) !important;
+    transform: translateY(-3px);
+  }
+  
+  @media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .slide-content {
+      padding: 1rem;
+    }
+    
+    .slide-logo {
+      max-width: 150px;
+    }
+    
+    .feature-box {
+      margin-bottom: 1rem;
+    }
+  }
+  
+  .btn {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 28px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .btn-primary {
+    background-color: #6c4f3d;
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #8a634a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+  
+  .btn-primary:active {
+    transform: translateY(0);
+    background-color: #5a4132;
+  }
+  
+  .contact-form .btn-primary {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+    margin-top: 10px;
+  }
